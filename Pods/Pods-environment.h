@@ -84,6 +84,12 @@
 #define COCOAPODS_VERSION_MINOR_BlocksKit_UIKit 2
 #define COCOAPODS_VERSION_PATCH_BlocksKit_UIKit 3
 
+// CHTCollectionViewWaterfallLayout
+#define COCOAPODS_POD_AVAILABLE_CHTCollectionViewWaterfallLayout
+#define COCOAPODS_VERSION_MAJOR_CHTCollectionViewWaterfallLayout 0
+#define COCOAPODS_VERSION_MINOR_CHTCollectionViewWaterfallLayout 7
+#define COCOAPODS_VERSION_PATCH_CHTCollectionViewWaterfallLayout 0
+
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0

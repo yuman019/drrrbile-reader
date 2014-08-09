@@ -128,9 +128,8 @@
 			children = (
 				3BD16E421995E81000E9F807 /* DAAppDelegate.h */,
 				3BD16E431995E81000E9F807 /* DAAppDelegate.m */,
-				3BD16E661995EADD00E9F807 /* DATopViewController.h */,
-				3BD16E671995EADD00E9F807 /* DATopViewController.m */,
-				3BD16E681995EADD00E9F807 /* DATopViewController.xib */,
+				3BD16E6E1995F36800E9F807 /* Controllers */,
+				3BD16E6D1995F35D00E9F807 /* Cell */,
 				3BD16E481995E81100E9F807 /* Images.xcassets */,
 				3BD16E451995E81000E9F807 /* Dribbble_App.xcdatamodeld */,
 				3BD16E3A1995E81000E9F807 /* Supporting Files */,
@@ -165,6 +164,23 @@
 				3BD16E591995E81100E9F807 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BD16E6D1995F35D00E9F807 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		3BD16E6E1995F36800E9F807 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E661995EADD00E9F807 /* DATopViewController.h */,
+				3BD16E671995EADD00E9F807 /* DATopViewController.m */,
+				3BD16E681995EADD00E9F807 /* DATopViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

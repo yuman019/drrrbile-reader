@@ -7,12 +7,16 @@
 //
 
 #import "DATopViewController.h"
+#import <CHTCollectionViewWaterfallLayout.h>
 
-@interface DATopViewController ()
+@interface DATopViewController ()<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
 @end
 
 @implementation DATopViewController
+{
+    UICollectionView *collectionView;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
 }
 
 - (void)didReceiveMemoryWarning
