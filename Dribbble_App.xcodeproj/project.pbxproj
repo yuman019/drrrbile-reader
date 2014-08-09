@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BD16E321995E81000E9F807 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD16E311995E81000E9F807 /* Foundation.framework */; };
+		3BD16E341995E81000E9F807 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD16E331995E81000E9F807 /* CoreGraphics.framework */; };
+		3BD16E361995E81000E9F807 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD16E351995E81000E9F807 /* UIKit.framework */; };
+		3BD16E381995E81000E9F807 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD16E371995E81000E9F807 /* CoreData.framework */; };
+		3BD16E3E1995E81000E9F807 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E3C1995E81000E9F807 /* InfoPlist.strings */; };
+		3BD16E401995E81000E9F807 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E3F1995E81000E9F807 /* main.m */; };
+		3BD16E441995E81000E9F807 /* DAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E431995E81000E9F807 /* DAAppDelegate.m */; };
+		3BD16E471995E81000E9F807 /* Dribbble_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E451995E81000E9F807 /* Dribbble_App.xcdatamodeld */; };
+		3BD16E491995E81100E9F807 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E481995E81100E9F807 /* Images.xcassets */; };
+		3BD16E501995E81100E9F807 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD16E4F1995E81100E9F807 /* XCTest.framework */; };
+		3BD16E511995E81100E9F807 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD16E311995E81000E9F807 /* Foundation.framework */; };
+		3BD16E521995E81100E9F807 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD16E351995E81000E9F807 /* UIKit.framework */; };
+		3BD16E531995E81100E9F807 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD16E371995E81000E9F807 /* CoreData.framework */; };
+		3BD16E5B1995E81100E9F807 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E591995E81100E9F807 /* InfoPlist.strings */; };
+		3BD16E5D1995E81100E9F807 /* Dribbble_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E5C1995E81100E9F807 /* Dribbble_AppTests.m */; };
+		3BD16E691995EADD00E9F807 /* DATopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E671995EADD00E9F807 /* DATopViewController.m */; };
+		3BD16E6A1995EADD00E9F807 /* DATopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E681995EADD00E9F807 /* DATopViewController.xib */; };
+		4854BDAFCEFB40A8AE432536 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8097AE6C6040F99604B67F /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BD16E541995E81100E9F807 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BD16E261995E81000E9F807 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BD16E2D1995E81000E9F807;
+			remoteInfo = Dribbble_App;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3BD16E2E1995E81000E9F807 /* Dribbble_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dribbble_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD16E311995E81000E9F807 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3BD16E331995E81000E9F807 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3BD16E351995E81000E9F807 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3BD16E371995E81000E9F807 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3BD16E3B1995E81000E9F807 /* Dribbble_App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dribbble_App-Info.plist"; sourceTree = "<group>"; };
+		3BD16E3D1995E81000E9F807 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3BD16E3F1995E81000E9F807 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3BD16E411995E81000E9F807 /* Dribbble_App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dribbble_App-Prefix.pch"; sourceTree = "<group>"; };
+		3BD16E421995E81000E9F807 /* DAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAAppDelegate.h; sourceTree = "<group>"; };
+		3BD16E431995E81000E9F807 /* DAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DAAppDelegate.m; sourceTree = "<group>"; };
+		3BD16E461995E81000E9F807 /* Dribbble_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dribbble_App.xcdatamodel; sourceTree = "<group>"; };
+		3BD16E481995E81100E9F807 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3BD16E4E1995E81100E9F807 /* Dribbble_AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Dribbble_AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD16E4F1995E81100E9F807 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3BD16E581995E81100E9F807 /* Dribbble_AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dribbble_AppTests-Info.plist"; sourceTree = "<group>"; };
+		3BD16E5A1995E81100E9F807 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3BD16E5C1995E81100E9F807 /* Dribbble_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dribbble_AppTests.m; sourceTree = "<group>"; };
+		3BD16E661995EADD00E9F807 /* DATopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATopViewController.h; sourceTree = "<group>"; };
+		3BD16E671995EADD00E9F807 /* DATopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATopViewController.m; sourceTree = "<group>"; };
+		3BD16E681995EADD00E9F807 /* DATopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DATopViewController.xib; sourceTree = "<group>"; };
+		8F8097AE6C6040F99604B67F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BADCF4DC44B4DFD9EB065D8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BD16E2B1995E81000E9F807 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD16E341995E81000E9F807 /* CoreGraphics.framework in Frameworks */,
+				3BD16E381995E81000E9F807 /* CoreData.framework in Frameworks */,
+				3BD16E361995E81000E9F807 /* UIKit.framework in Frameworks */,
+				3BD16E321995E81000E9F807 /* Foundation.framework in Frameworks */,
+				4854BDAFCEFB40A8AE432536 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BD16E4B1995E81100E9F807 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD16E501995E81100E9F807 /* XCTest.framework in Frameworks */,
+				3BD16E531995E81100E9F807 /* CoreData.framework in Frameworks */,
+				3BD16E521995E81100E9F807 /* UIKit.framework in Frameworks */,
+				3BD16E511995E81100E9F807 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BD16E251995E81000E9F807 = {
+			isa = PBXGroup;
+			children = (
+				3BD16E391995E81000E9F807 /* Dribbble_App */,
+				3BD16E561995E81100E9F807 /* Dribbble_AppTests */,
+				3BD16E301995E81000E9F807 /* Frameworks */,
+				3BD16E2F1995E81000E9F807 /* Products */,
+				9BADCF4DC44B4DFD9EB065D8 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		3BD16E2F1995E81000E9F807 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E2E1995E81000E9F807 /* Dribbble_App.app */,
+				3BD16E4E1995E81100E9F807 /* Dribbble_AppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BD16E301995E81000E9F807 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E311995E81000E9F807 /* Foundation.framework */,
+				3BD16E331995E81000E9F807 /* CoreGraphics.framework */,
+				3BD16E351995E81000E9F807 /* UIKit.framework */,
+				3BD16E371995E81000E9F807 /* CoreData.framework */,
+				3BD16E4F1995E81100E9F807 /* XCTest.framework */,
+				8F8097AE6C6040F99604B67F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BD16E391995E81000E9F807 /* Dribbble_App */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E421995E81000E9F807 /* DAAppDelegate.h */,
+				3BD16E431995E81000E9F807 /* DAAppDelegate.m */,
+				3BD16E661995EADD00E9F807 /* DATopViewController.h */,
+				3BD16E671995EADD00E9F807 /* DATopViewController.m */,
+				3BD16E681995EADD00E9F807 /* DATopViewController.xib */,
+				3BD16E481995E81100E9F807 /* Images.xcassets */,
+				3BD16E451995E81000E9F807 /* Dribbble_App.xcdatamodeld */,
+				3BD16E3A1995E81000E9F807 /* Supporting Files */,
+			);
+			path = Dribbble_App;
+			sourceTree = "<group>";
+		};
+		3BD16E3A1995E81000E9F807 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E3B1995E81000E9F807 /* Dribbble_App-Info.plist */,
+				3BD16E3C1995E81000E9F807 /* InfoPlist.strings */,
+				3BD16E3F1995E81000E9F807 /* main.m */,
+				3BD16E411995E81000E9F807 /* Dribbble_App-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BD16E561995E81100E9F807 /* Dribbble_AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E5C1995E81100E9F807 /* Dribbble_AppTests.m */,
+				3BD16E571995E81100E9F807 /* Supporting Files */,
+			);
+			path = Dribbble_AppTests;
+			sourceTree = "<group>";
+		};
+		3BD16E571995E81100E9F807 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E581995E81100E9F807 /* Dribbble_AppTests-Info.plist */,
+				3BD16E591995E81100E9F807 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BD16E2D1995E81000E9F807 /* Dribbble_App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BD16E601995E81100E9F807 /* Build configuration list for PBXNativeTarget "Dribbble_App" */;
+			buildPhases = (
+				F388C6058563421591D019B6 /* Check Pods Manifest.lock */,
+				3BD16E2A1995E81000E9F807 /* Sources */,
+				3BD16E2B1995E81000E9F807 /* Frameworks */,
+				3BD16E2C1995E81000E9F807 /* Resources */,
+				56D4E3CC54354174B4384CFA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dribbble_App;
+			productName = Dribbble_App;
+			productReference = 3BD16E2E1995E81000E9F807 /* Dribbble_App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BD16E4D1995E81100E9F807 /* Dribbble_AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BD16E631995E81100E9F807 /* Build configuration list for PBXNativeTarget "Dribbble_AppTests" */;
+			buildPhases = (
+				3BD16E4A1995E81100E9F807 /* Sources */,
+				3BD16E4B1995E81100E9F807 /* Frameworks */,
+				3BD16E4C1995E81100E9F807 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BD16E551995E81100E9F807 /* PBXTargetDependency */,
+			);
+			name = Dribbble_AppTests;
+			productName = Dribbble_AppTests;
+			productReference = 3BD16E4E1995E81100E9F807 /* Dribbble_AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BD16E261995E81000E9F807 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "yuma oda";
+				TargetAttributes = {
+					3BD16E4D1995E81100E9F807 = {
+						TestTargetID = 3BD16E2D1995E81000E9F807;
+					};
+				};
+			};
+			buildConfigurationList = 3BD16E291995E81000E9F807 /* Build configuration list for PBXProject "Dribbble_App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BD16E251995E81000E9F807;
+			productRefGroup = 3BD16E2F1995E81000E9F807 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BD16E2D1995E81000E9F807 /* Dribbble_App */,
+				3BD16E4D1995E81100E9F807 /* Dribbble_AppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BD16E2C1995E81000E9F807 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD16E6A1995EADD00E9F807 /* DATopViewController.xib in Resources */,
+				3BD16E3E1995E81000E9F807 /* InfoPlist.strings in Resources */,
+				3BD16E491995E81100E9F807 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BD16E4C1995E81100E9F807 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD16E5B1995E81100E9F807 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56D4E3CC54354174B4384CFA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F388C6058563421591D019B6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BD16E2A1995E81000E9F807 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD16E401995E81000E9F807 /* main.m in Sources */,
+				3BD16E471995E81000E9F807 /* Dribbble_App.xcdatamodeld in Sources */,
+				3BD16E441995E81000E9F807 /* DAAppDelegate.m in Sources */,
+				3BD16E691995EADD00E9F807 /* DATopViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BD16E4A1995E81100E9F807 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD16E5D1995E81100E9F807 /* Dribbble_AppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BD16E551995E81100E9F807 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BD16E2D1995E81000E9F807 /* Dribbble_App */;
+			targetProxy = 3BD16E541995E81100E9F807 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3BD16E3C1995E81000E9F807 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BD16E3D1995E81000E9F807 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3BD16E591995E81100E9F807 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BD16E5A1995E81100E9F807 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BD16E5E1995E81100E9F807 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3BD16E5F1995E81100E9F807 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BD16E611995E81100E9F807 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BADCF4DC44B4DFD9EB065D8 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dribbble_App/Dribbble_App-Prefix.pch";
+				INFOPLIST_FILE = "Dribbble_App/Dribbble_App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3BD16E621995E81100E9F807 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BADCF4DC44B4DFD9EB065D8 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dribbble_App/Dribbble_App-Prefix.pch";
+				INFOPLIST_FILE = "Dribbble_App/Dribbble_App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3BD16E641995E81100E9F807 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dribbble_App.app/Dribbble_App";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dribbble_App/Dribbble_App-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Dribbble_AppTests/Dribbble_AppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3BD16E651995E81100E9F807 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dribbble_App.app/Dribbble_App";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dribbble_App/Dribbble_App-Prefix.pch";
+				INFOPLIST_FILE = "Dribbble_AppTests/Dribbble_AppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BD16E291995E81000E9F807 /* Build configuration list for PBXProject "Dribbble_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BD16E5E1995E81100E9F807 /* Debug */,
+				3BD16E5F1995E81100E9F807 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BD16E601995E81100E9F807 /* Build configuration list for PBXNativeTarget "Dribbble_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BD16E611995E81100E9F807 /* Debug */,
+				3BD16E621995E81100E9F807 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BD16E631995E81100E9F807 /* Build configuration list for PBXNativeTarget "Dribbble_AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BD16E641995E81100E9F807 /* Debug */,
+				3BD16E651995E81100E9F807 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3BD16E451995E81000E9F807 /* Dribbble_App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3BD16E461995E81000E9F807 /* Dribbble_App.xcdatamodel */,
+			);
+			currentVersion = 3BD16E461995E81000E9F807 /* Dribbble_App.xcdatamodel */;
+			path = Dribbble_App.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3BD16E261995E81000E9F807 /* Project object */;
+}
