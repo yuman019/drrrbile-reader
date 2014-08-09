@@ -8,6 +8,8 @@
 
 #import "DATopViewController.h"
 #import "DACollectionViewCell.h"
+#import "DAShotsModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString * const DACollectionViewCellIdentifier = @"Cell";
 
@@ -38,13 +40,7 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     [self settingCollectionView];
     
     shotsArray = [NSMutableArray array];
-    [[DAAPIConnecter sharedManager] connectWithType:DAAPIRequestTypeEveryone pageCount:1 completion:^(BOOL successFlg, NSArray *array) {
-        if (successFlg == NO) {
-            NSLog(@"error");
-        }else {
-            [shotsArray addObjectsFromArray:array];
-        }
-    }];
+    [self getShotsModelArrayWithReload];
     
 }
 
@@ -58,13 +54,24 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     layout.minimumInteritemSpacing = 30;
     
     collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-    collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    collectionView.backgroundColor = COLOR_BACKGROUND;
     collectionView.dataSource = self;
     collectionView.delegate = self;
     [collectionView registerClass:[DACollectionViewCell class] forCellWithReuseIdentifier:DACollectionViewCellIdentifier];
     [collectionView registerNib:[UINib nibWithNibName:@"DACollectionViewCell" bundle:nil] forCellWithReuseIdentifier:DACollectionViewCellIdentifier];
-    collectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:collectionView];
+}
+
+-(void)getShotsModelArrayWithReload
+{
+    [[DAAPIConnecter sharedManager] connectWithType:DAAPIRequestTypeDebuts pageCount:1 completion:^(BOOL successFlg, NSArray *array) {
+        if (successFlg == NO) {
+            NSLog(@"error");
+        }else {
+            [shotsArray addObjectsFromArray:array];
+            [collectionView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,11 +95,26 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView_ cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DACollectionViewCell *cell = (DACollectionViewCell *)[collectionView_ dequeueReusableCellWithReuseIdentifier:DACollectionViewCellIdentifier forIndexPath:indexPath];
-    
     cell.backgroundColor = [UIColor greenColor];
     
+    DAShotsModel *shotsModel = shotsArray[indexPath.row];
+    
     cell.mainImageView = (UIImageView *)[cell viewWithTag:1];
-    cell.mainImageView.backgroundColor = [UIColor magentaColor];
+    cell.mainImageView.backgroundColor = [UIColor blackColor];
+    __weak UIImageView *weekImageView = cell.mainImageView;
+    [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:shotsModel.imageURLStr]
+                          placeholderImage:nil
+                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                     if (cacheType != SDImageCacheTypeMemory) {
+                                         [UIView transitionWithView:weekImageView
+                                                           duration:0.3
+                                                            options:UIViewAnimationOptionTransitionCrossDissolve |
+                                                                    UIViewAnimationOptionCurveLinear |
+                                                                    UIViewAnimationOptionAllowUserInteraction
+                                                         animations:nil
+                                                         completion:nil];
+                                     }
+    }];
     
     
     return cell;

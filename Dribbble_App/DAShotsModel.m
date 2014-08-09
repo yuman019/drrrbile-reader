@@ -7,8 +7,17 @@
 //
 
 #import "DAShotsModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation DAShotsModel
+
+-(id)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
 
 + (DAShotsModel *)makesShotsModelWith:(NSDictionary *)dictionary
 {
@@ -23,6 +32,11 @@
     shotsModel.avatarURLStr = dictionary[@"player"][@"avatar_url"];
     
     return shotsModel;
+}
+
+-(void)getImageDataWithURLString:(NSString *)URLString
+{
+    
 }
 
 @end

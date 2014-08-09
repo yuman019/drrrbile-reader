@@ -1,6 +1,7 @@
-platform :ios, '7.0'
+platform :ios, "7.0"
 pod "AFNetworking", "~> 2.0"
-pod 'BlocksKit'
-pod 'MBProgressHUD', '~> 0.8'
-pod 'CHTCollectionViewWaterfallLayout'
+pod "BlocksKit"
+pod "MBProgressHUD", "~> 0.8"
+pod "CHTCollectionViewWaterfallLayout"
+pod "SDWebImage"
 

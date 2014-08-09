@@ -15,4 +15,7 @@
 #define API_DRIBBBLE_DEBUTS     @"debuts"
 #define API_DRIBBBLE_POPULAR    @"popular"
 
+// color
+#define COLOR_BACKGROUND        [UIColor colorWithRed:255.0/255.0 green:235.0/255.0 blue:205.0/255.0 alpha:1]
+
 #endif
