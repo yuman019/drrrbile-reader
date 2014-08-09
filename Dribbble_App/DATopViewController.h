@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CHTCollectionViewWaterfallLayout.h>
 
 @interface DATopViewController : UIViewController
+<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
 @end
