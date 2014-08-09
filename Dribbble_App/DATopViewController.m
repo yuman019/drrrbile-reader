@@ -9,6 +9,7 @@
 #import "DATopViewController.h"
 #import "DACollectionViewCell.h"
 #import "DAShotsModel.h"
+#import "DADetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString * const DACollectionViewCellIdentifier = @"Cell";
@@ -177,7 +178,9 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DAShotsModel *shotsModel = shotsArray[indexPath.row];
-    // [self.navigationController pushViewController:<#(UIViewController *)#> animated:YES];
+    DADetailViewController *detailVC = [[DADetailViewController alloc] initWithNibName:@"DADetailViewController" bundle:nil];
+    detailVC.shotsModel = shotsModel;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout

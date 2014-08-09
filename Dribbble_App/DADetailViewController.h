@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DAShotsModel.h"
 
 @interface DADetailViewController : UIViewController
+
+@property (nonatomic) DAShotsModel *shotsModel;
 
 @end
