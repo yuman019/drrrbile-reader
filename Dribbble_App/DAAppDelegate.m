@@ -22,7 +22,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     DATopViewController *topVC = [[DATopViewController alloc] initWithNibName:@"DATopViewController" bundle:nil];
-    self.window.rootViewController = topVC;
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:topVC];
+    self.window.rootViewController = navVC;
     
     [self.window makeKeyAndVisible];
     return YES;

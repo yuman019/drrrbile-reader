@@ -21,7 +21,35 @@
 
 -(void)layoutSubviews
 {
+    self.backgroundColor = [UIColor whiteColor];
     
+    self.layer.cornerRadius = 3.0;
+    self.clipsToBounds = YES;
+    
+    self.avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame) / 2.0;
+    self.avatarImageView.clipsToBounds = YES;
+    
+//    self.nameLabel.adjustsFontSizeToFitWidth = YES;
+//    self.nameLabel.minimumScaleFactor = 2.0;
+    self.nameLabel.textColor = [UIColor grayColor];
+    self.titleLabel.textColor = [UIColor darkTextColor];
+    self.likeLabel.textColor = [UIColor lightGrayColor];
+    self.likeCountLabel.textColor = [UIColor lightGrayColor];
+    self.pageViewLabel.textColor = [UIColor lightGrayColor];
+    self.pageViewCountLabel.textColor = [UIColor lightGrayColor];
+    
+//    [self.likeCountLabel sizeToFit];
+//    self.pageViewLabel.frame = (CGRect){
+//        .origin = {
+//            CGRectGetMinX(self.likeCountLabel.frame) + CGRectGetWidth(self.pageViewCountLabel.frame),
+//            CGRectGetMinY(self.likeCountLabel.frame)
+//        }
+//    };
+//    [self.pageViewLabel sizeToFit];
+    
+    //self.mainImageView.frame = CGRectMake(0, 0, self.mainImageView.image.size.width, self.mainImageView.image.size.height);
+    
+
 }
 
 /*

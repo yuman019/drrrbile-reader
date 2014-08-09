@@ -10,6 +10,6 @@
 #import <CHTCollectionViewWaterfallLayout.h>
 
 @interface DATopViewController : UIViewController
-<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
+<UICollectionViewDataSource, UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout>
 
 @end

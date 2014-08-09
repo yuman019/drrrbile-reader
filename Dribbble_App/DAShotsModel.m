@@ -23,10 +23,12 @@
 {
     DAShotsModel *shotsModel = [[DAShotsModel alloc] init];
     shotsModel.titleStr = dictionary[@"title"];
-    shotsModel.likesCountStr = dictionary[@"likes_count"];
-    shotsModel.viewsCountStr = dictionary[@"views_count"];
+    shotsModel.likesCountStr = [NSString stringWithFormat:@"%d", (int)dictionary[@"likes_count"]];
+    shotsModel.viewsCountStr = [NSString stringWithFormat:@"%d", (int)dictionary[@"views_count"]];
     shotsModel.imageURLStr = dictionary[@"image_url"];
     shotsModel.descriptionStr = dictionary[@"description"];
+    shotsModel.width = (NSNumber *)dictionary[@"width"];
+    shotsModel.height = (NSNumber *)dictionary[@"height"];
     shotsModel.usernameStr = dictionary[@"player"][@"username"];
     shotsModel.nameStr = dictionary[@"player"][@"name"];
     shotsModel.avatarURLStr = dictionary[@"player"][@"avatar_url"];

@@ -62,15 +62,18 @@ static DAAPIConnecter *sharedObj = nil;
     NSString *requestURLStr = [NSString stringWithFormat:@"%@%@", API_DRIBBBLE_DOMAIN, actionStr];
     
     NSNumber *pageCountNum = [[NSNumber alloc] initWithInteger:pageCount];
-    NSDictionary *parameters = @{@"page": pageCountNum};
+    NSDictionary *parameters = @{@"page"    : pageCountNum,
+                                 @"per_page": @16};
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:requestURLStr
       parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             // NSLog(@"object::%@", responseObject);
              NSMutableArray *shotsModelArray = [NSMutableArray array];
              [responseObject[@"shots"] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                  DAShotsModel *shotsModel = [DAShotsModel makesShotsModelWith:obj];
+                 // NSLog(@"%@", shotsModel.width);
                  [shotsModelArray addObject:shotsModel];
              }];
              completion(YES, shotsModelArray);
