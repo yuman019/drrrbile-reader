@@ -18,6 +18,7 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 @implementation DATopViewController
 {
     UICollectionView *collectionView;
+    NSMutableArray *shotsArray;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,6 +36,16 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     // Do any additional setup after loading the view from its nib.
     
     [self settingCollectionView];
+    
+    shotsArray = [NSMutableArray array];
+    [[DAAPIConnecter sharedManager] connectWithType:DAAPIRequestTypeEveryone pageCount:1 completion:^(BOOL successFlg, NSArray *array) {
+        if (successFlg == NO) {
+            NSLog(@"error");
+        }else {
+            [shotsArray addObjectsFromArray:array];
+        }
+    }];
+    
 }
 
 -(void)settingCollectionView
@@ -66,7 +77,7 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return shotsArray.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

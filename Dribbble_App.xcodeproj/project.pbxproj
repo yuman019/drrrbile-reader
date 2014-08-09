@@ -26,6 +26,8 @@
 		3BD16E6A1995EADD00E9F807 /* DATopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E681995EADD00E9F807 /* DATopViewController.xib */; };
 		3BD16E711995F50500E9F807 /* DACollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E701995F50500E9F807 /* DACollectionViewCell.m */; };
 		3BD16E731995F53B00E9F807 /* DACollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E721995F53B00E9F807 /* DACollectionViewCell.xib */; };
+		3BD16E781995FF0300E9F807 /* DAAPIConnecter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E771995FF0300E9F807 /* DAAPIConnecter.m */; };
+		3BD16E7E19960EB700E9F807 /* DAShotsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E7D19960EB700E9F807 /* DAShotsModel.m */; };
 		4854BDAFCEFB40A8AE432536 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8097AE6C6040F99604B67F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,11 @@
 		3BD16E6F1995F50500E9F807 /* DACollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACollectionViewCell.h; sourceTree = "<group>"; };
 		3BD16E701995F50500E9F807 /* DACollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACollectionViewCell.m; sourceTree = "<group>"; };
 		3BD16E721995F53B00E9F807 /* DACollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DACollectionViewCell.xib; sourceTree = "<group>"; };
+		3BD16E761995FF0300E9F807 /* DAAPIConnecter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAPIConnecter.h; sourceTree = "<group>"; };
+		3BD16E771995FF0300E9F807 /* DAAPIConnecter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAPIConnecter.m; sourceTree = "<group>"; };
+		3BD16E7A1996011500E9F807 /* CommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		3BD16E7C19960EB700E9F807 /* DAShotsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAShotsModel.h; sourceTree = "<group>"; };
+		3BD16E7D19960EB700E9F807 /* DAShotsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAShotsModel.m; sourceTree = "<group>"; };
 		8F8097AE6C6040F99604B67F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BADCF4DC44B4DFD9EB065D8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +140,9 @@
 			children = (
 				3BD16E421995E81000E9F807 /* DAAppDelegate.h */,
 				3BD16E431995E81000E9F807 /* DAAppDelegate.m */,
+				3BD16E79199600B800E9F807 /* Commons */,
+				3BD16E751995FEDF00E9F807 /* API */,
+				3BD16E7B19960E3800E9F807 /* Model */,
 				3BD16E6E1995F36800E9F807 /* Controllers */,
 				3BD16E6D1995F35D00E9F807 /* Cell */,
 				3BD16E481995E81100E9F807 /* Images.xcassets */,
@@ -189,6 +199,32 @@
 				3BD16E681995EADD00E9F807 /* DATopViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3BD16E751995FEDF00E9F807 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E761995FF0300E9F807 /* DAAPIConnecter.h */,
+				3BD16E771995FF0300E9F807 /* DAAPIConnecter.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		3BD16E79199600B800E9F807 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E7A1996011500E9F807 /* CommonDefine.h */,
+			);
+			name = Commons;
+			sourceTree = "<group>";
+		};
+		3BD16E7B19960E3800E9F807 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E7C19960EB700E9F807 /* DAShotsModel.h */,
+				3BD16E7D19960EB700E9F807 /* DAShotsModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,8 +363,10 @@
 				3BD16E401995E81000E9F807 /* main.m in Sources */,
 				3BD16E471995E81000E9F807 /* Dribbble_App.xcdatamodeld in Sources */,
 				3BD16E441995E81000E9F807 /* DAAppDelegate.m in Sources */,
+				3BD16E781995FF0300E9F807 /* DAAPIConnecter.m in Sources */,
 				3BD16E691995EADD00E9F807 /* DATopViewController.m in Sources */,
 				3BD16E711995F50500E9F807 /* DACollectionViewCell.m in Sources */,
+				3BD16E7E19960EB700E9F807 /* DAShotsModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

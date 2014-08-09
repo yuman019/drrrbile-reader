@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DACollectionViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 
 @end
