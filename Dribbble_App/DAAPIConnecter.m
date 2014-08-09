@@ -69,7 +69,7 @@ static DAAPIConnecter *sharedObj = nil;
     [manager GET:requestURLStr
       parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             // NSLog(@"object::%@", responseObject);
+             NSLog(@"object::%@", responseObject);
              NSMutableArray *shotsModelArray = [NSMutableArray array];
              [responseObject[@"shots"] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                  DAShotsModel *shotsModel = [DAShotsModel makesShotsModelWith:obj];

@@ -145,8 +145,8 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
                                      }
     }];
     cell.avatarImageView = (UIImageView *)[cell viewWithTag:2];
-    cell.mainImageView.backgroundColor = [UIColor blackColor];
-    __weak UIImageView *weekAvatarImageView = cell.mainImageView;
+    cell.avatarImageView.backgroundColor = [UIColor blackColor];
+    __weak UIImageView *weekAvatarImageView = cell.avatarImageView;
     [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:shotsModel.avatarURLStr]
                             placeholderImage:nil
                                    completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
@@ -165,10 +165,45 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     cell.nameLabel.text = shotsModel.usernameStr;
     cell.titleLabel = (UILabel *)[cell viewWithTag:4];
     cell.titleLabel.text = shotsModel.titleStr;
-    cell.likeCountLabel = (UILabel *)[cell viewWithTag:6];
-    cell.likeCountLabel.text = shotsModel.likesCountStr;
+    
     cell.pageViewCountLabel = (UILabel *)[cell viewWithTag:8];
+    cell.pageViewCountLabel.frame = (CGRect){
+        .origin = {
+            CGRectGetMinX(cell.titleLabel.frame), CGRectGetMaxY(cell.titleLabel.frame) + 5
+        },
+        .size = {0, 0}
+    };
     cell.pageViewCountLabel.text = shotsModel.viewsCountStr;
+    [cell.pageViewCountLabel sizeToFit];
+    
+    cell.pageViewLabel.frame = (CGRect){
+        .origin = {
+            CGRectGetMaxX(cell.pageViewCountLabel.frame) + 1, CGRectGetMinY(cell.pageViewCountLabel.frame)
+        },
+        .size = {0, 0}
+    };
+    cell.pageViewLabel.text = @"views";
+    [cell.pageViewLabel sizeToFit];
+    
+    cell.likeCountLabel = (UILabel *)[cell viewWithTag:6];
+    cell.likeCountLabel.frame = (CGRect){
+        .origin = {
+            CGRectGetMaxX(cell.pageViewLabel.frame) + 3, CGRectGetMinY(cell.pageViewLabel.frame)
+        },
+        .size = {0, 0}
+    };
+    cell.likeCountLabel.text = shotsModel.likesCountStr;
+    [cell.likeCountLabel sizeToFit];
+    
+    cell.likeLabel.frame = (CGRect){
+        .origin = {
+            CGRectGetMaxX(cell.likeCountLabel.frame) + 1, CGRectGetMinY(cell.likeCountLabel.frame)
+        },
+        .size = {0, 0}
+    };
+    cell.likeLabel.text = @"likes";
+    [cell.likeLabel sizeToFit];
+    
     
     return cell;
 }
@@ -188,7 +223,7 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 //    return [self.cellSizes[indexPath.item] CGSizeValue];
-    return CGSizeMake(145, 220);
+    return CGSizeMake(145, 212);
 }
 
 #pragma mark - Paging

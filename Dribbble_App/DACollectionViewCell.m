@@ -29,14 +29,33 @@
     self.avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame) / 2.0;
     self.avatarImageView.clipsToBounds = YES;
     
-//    self.nameLabel.adjustsFontSizeToFitWidth = YES;
-//    self.nameLabel.minimumScaleFactor = 2.0;
+    self.nameLabel.adjustsFontSizeToFitWidth = YES;
+    self.nameLabel.minimumScaleFactor = 2.0;
+    
     self.nameLabel.textColor = [UIColor grayColor];
     self.titleLabel.textColor = [UIColor darkTextColor];
     self.likeLabel.textColor = [UIColor lightGrayColor];
     self.likeCountLabel.textColor = [UIColor lightGrayColor];
     self.pageViewLabel.textColor = [UIColor lightGrayColor];
     self.pageViewCountLabel.textColor = [UIColor lightGrayColor];
+    
+//    self.pageViewCountLabel.frame = (CGRect){
+//        .origin = {
+//            CGRectGetMinX(self.titleLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 5
+//        },
+//        .size = {0, 0}
+//    };
+//    [self.pageViewCountLabel sizeToFit];
+    
+//    self.pageViewLabel.frame = (CGRect){
+//        .origin = {
+//            CGRectGetMaxY(self.pageViewCountLabel.frame) + 3, CGRectGetMinY(self.pageViewCountLabel.frame)
+//        },
+//        .size = {0, 0}
+//    };
+//    self.pageViewLabel.text = @"views";
+//    [self.pageViewLabel sizeToFit];
+//    self.pageViewLabel.backgroundColor = [UIColor redColor];
     
 //    [self.likeCountLabel sizeToFit];
 //    self.pageViewLabel.frame = (CGRect){

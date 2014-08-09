@@ -25,8 +25,15 @@
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:topVC];
     self.window.rootViewController = navVC;
     
+    [self settingNavigationbar];
+    
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)settingNavigationbar
+{
+    [UINavigationBar appearance].barTintColor = COLOR_PINK;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

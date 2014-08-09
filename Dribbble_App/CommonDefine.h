@@ -16,6 +16,7 @@
 #define API_DRIBBBLE_POPULAR    @"popular"
 
 // color
-#define COLOR_BACKGROUND        [UIColor colorWithRed:255.0/255.0 green:235.0/255.0 blue:205.0/255.0 alpha:1]
-
+#define COLOR_BACKGROUND        [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1]
+#define COLOR_PINK              [UIColor colorWithRed:232.0/255.0 green:79.0/255.0 blue:137.0/255.0 alpha:1];
+#define COLOR_DARK              [UIColor colorWithRed:35.0/255.0 green:40.0/255.0 blue:45.0/255.0 alpha:1]
 #endif

@@ -30,6 +30,7 @@
 		3BD16E7E19960EB700E9F807 /* DAShotsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E7D19960EB700E9F807 /* DAShotsModel.m */; };
 		3BD16E82199665F500E9F807 /* DADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E80199665F500E9F807 /* DADetailViewController.m */; };
 		3BD16E83199665F500E9F807 /* DADetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E81199665F500E9F807 /* DADetailViewController.xib */; };
+		3BD16E8A199681A300E9F807 /* NSString+stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E89199681A300E9F807 /* NSString+stripHtml.m */; };
 		4854BDAFCEFB40A8AE432536 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8097AE6C6040F99604B67F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		3BD16E7F199665F500E9F807 /* DADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADetailViewController.h; sourceTree = "<group>"; };
 		3BD16E80199665F500E9F807 /* DADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADetailViewController.m; sourceTree = "<group>"; };
 		3BD16E81199665F500E9F807 /* DADetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DADetailViewController.xib; sourceTree = "<group>"; };
+		3BD16E88199681A300E9F807 /* NSString+stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+stripHtml.h"; sourceTree = "<group>"; };
+		3BD16E89199681A300E9F807 /* NSString+stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+stripHtml.m"; sourceTree = "<group>"; };
 		8F8097AE6C6040F99604B67F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BADCF4DC44B4DFD9EB065D8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +148,7 @@
 			children = (
 				3BD16E421995E81000E9F807 /* DAAppDelegate.h */,
 				3BD16E431995E81000E9F807 /* DAAppDelegate.m */,
+				3BD16E8419967F6300E9F807 /* Category */,
 				3BD16E79199600B800E9F807 /* Commons */,
 				3BD16E751995FEDF00E9F807 /* API */,
 				3BD16E7B19960E3800E9F807 /* Model */,
@@ -233,6 +237,15 @@
 				3BD16E7D19960EB700E9F807 /* DAShotsModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		3BD16E8419967F6300E9F807 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E88199681A300E9F807 /* NSString+stripHtml.h */,
+				3BD16E89199681A300E9F807 /* NSString+stripHtml.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +387,7 @@
 				3BD16E82199665F500E9F807 /* DADetailViewController.m in Sources */,
 				3BD16E441995E81000E9F807 /* DAAppDelegate.m in Sources */,
 				3BD16E781995FF0300E9F807 /* DAAPIConnecter.m in Sources */,
+				3BD16E8A199681A300E9F807 /* NSString+stripHtml.m in Sources */,
 				3BD16E691995EADD00E9F807 /* DATopViewController.m in Sources */,
 				3BD16E711995F50500E9F807 /* DACollectionViewCell.m in Sources */,
 				3BD16E7E19960EB700E9F807 /* DAShotsModel.m in Sources */,
