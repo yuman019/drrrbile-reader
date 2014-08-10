@@ -19,6 +19,11 @@
     return self;
 }
 
+-(void)configureCellWithShotsModel:(DAShotsModel *)shotsModel
+{
+    
+}
+
 -(void)layoutSubviews
 {
     self.backgroundColor = [UIColor whiteColor];

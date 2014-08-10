@@ -54,12 +54,12 @@
     self.avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.frame) / 2.0;
     self.avatarImageView.clipsToBounds = YES;
     
+    self.titleLabel.text = self.shotsModel.titleStr;
     self.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
     self.titleLabel.minimumScaleFactor = 10.0;
     self.titleLabel.textColor = [UIColor whiteColor];
-    self.titleLabel.text = self.shotsModel.titleStr;
-//    [self.titleLabel sizeToFit];
+    
     
     self.byLabel.textColor = [UIColor lightGrayColor];
     self.nameLabel.textColor = COLOR_PINK;

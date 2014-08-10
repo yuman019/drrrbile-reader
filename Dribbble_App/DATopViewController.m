@@ -123,6 +123,11 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     
     DAShotsModel *shotsModel = shotsArray[indexPath.row];
     
+    //[cell configureCellWithShotsModel:shotsModel];
+    
+    
+    
+    
 //    float resizedWidth = 145.0;
 //    float resizedHeight = resizedWidth * [shotsModel.height floatValue] / [shotsModel.width floatValue];
 //    NSLog(@"%f", resizedHeight);
@@ -223,7 +228,9 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 //    return [self.cellSizes[indexPath.item] CGSizeValue];
-    return CGSizeMake(145, 212);
+    // return CGSizeMake(145, 212);
+    return CGSizeMake(145 , 212 / 2);
+    //return CGSizeMake(145 + arc4random() % 20, 212 + arc4random() % 20);
 }
 
 #pragma mark - Paging

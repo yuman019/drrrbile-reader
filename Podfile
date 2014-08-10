@@ -4,4 +4,4 @@ pod "BlocksKit"
 pod "MBProgressHUD", "~> 0.8"
 pod "CHTCollectionViewWaterfallLayout"
 pod "SDWebImage"
-
+pod "JASidePanels"

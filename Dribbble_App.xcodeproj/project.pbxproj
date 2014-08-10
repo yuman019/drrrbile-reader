@@ -31,6 +31,8 @@
 		3BD16E82199665F500E9F807 /* DADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E80199665F500E9F807 /* DADetailViewController.m */; };
 		3BD16E83199665F500E9F807 /* DADetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E81199665F500E9F807 /* DADetailViewController.xib */; };
 		3BD16E8A199681A300E9F807 /* NSString+stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E89199681A300E9F807 /* NSString+stripHtml.m */; };
+		3BD16E8E19973A1C00E9F807 /* DALeftSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E8C19973A1C00E9F807 /* DALeftSideViewController.m */; };
+		3BD16E8F19973A1C00E9F807 /* DALeftSideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E8D19973A1C00E9F807 /* DALeftSideViewController.xib */; };
 		4854BDAFCEFB40A8AE432536 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8097AE6C6040F99604B67F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,9 @@
 		3BD16E81199665F500E9F807 /* DADetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DADetailViewController.xib; sourceTree = "<group>"; };
 		3BD16E88199681A300E9F807 /* NSString+stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+stripHtml.h"; sourceTree = "<group>"; };
 		3BD16E89199681A300E9F807 /* NSString+stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+stripHtml.m"; sourceTree = "<group>"; };
+		3BD16E8B19973A1C00E9F807 /* DALeftSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALeftSideViewController.h; sourceTree = "<group>"; };
+		3BD16E8C19973A1C00E9F807 /* DALeftSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALeftSideViewController.m; sourceTree = "<group>"; };
+		3BD16E8D19973A1C00E9F807 /* DALeftSideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DALeftSideViewController.xib; sourceTree = "<group>"; };
 		8F8097AE6C6040F99604B67F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BADCF4DC44B4DFD9EB065D8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +211,9 @@
 				3BD16E661995EADD00E9F807 /* DATopViewController.h */,
 				3BD16E671995EADD00E9F807 /* DATopViewController.m */,
 				3BD16E681995EADD00E9F807 /* DATopViewController.xib */,
+				3BD16E8B19973A1C00E9F807 /* DALeftSideViewController.h */,
+				3BD16E8C19973A1C00E9F807 /* DALeftSideViewController.m */,
+				3BD16E8D19973A1C00E9F807 /* DALeftSideViewController.xib */,
 				3BD16E7F199665F500E9F807 /* DADetailViewController.h */,
 				3BD16E80199665F500E9F807 /* DADetailViewController.m */,
 				3BD16E81199665F500E9F807 /* DADetailViewController.xib */,
@@ -327,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD16E83199665F500E9F807 /* DADetailViewController.xib in Resources */,
+				3BD16E8F19973A1C00E9F807 /* DALeftSideViewController.xib in Resources */,
 				3BD16E6A1995EADD00E9F807 /* DATopViewController.xib in Resources */,
 				3BD16E731995F53B00E9F807 /* DACollectionViewCell.xib in Resources */,
 				3BD16E3E1995E81000E9F807 /* InfoPlist.strings in Resources */,
@@ -389,6 +398,7 @@
 				3BD16E781995FF0300E9F807 /* DAAPIConnecter.m in Sources */,
 				3BD16E8A199681A300E9F807 /* NSString+stripHtml.m in Sources */,
 				3BD16E691995EADD00E9F807 /* DATopViewController.m in Sources */,
+				3BD16E8E19973A1C00E9F807 /* DALeftSideViewController.m in Sources */,
 				3BD16E711995F50500E9F807 /* DACollectionViewCell.m in Sources */,
 				3BD16E7E19960EB700E9F807 /* DAShotsModel.m in Sources */,
 			);

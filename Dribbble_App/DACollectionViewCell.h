@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DAShotsModel.h"
 
 @interface DACollectionViewCell : UICollectionViewCell
 
@@ -18,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pageViewLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pageViewCountLabel;
+
+-(void)configureCellWithShotsModel:(DAShotsModel *)shotsModel;
 
 @end
