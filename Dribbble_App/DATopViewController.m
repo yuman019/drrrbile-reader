@@ -41,13 +41,29 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navigationController.navigationBar.translucent = NO;
     
     [self settingCollectionView];
     [self settingRefleshController];
     
     shotsArray = [NSMutableArray array];
     nowPage = 1;
-    [self getShotsModelArrayWithRequestType:DAAPIRequestTypePopular WithPage:nowPage];
+
+    NSLog(@"type::%ld", self.type);
+    switch (self.type) {
+        case DAAPIRequestTypeEveryone:
+            self.title = @"Everyone";
+            break;
+        case DAAPIRequestTypeDebuts:
+            self.title = @"Debuts";
+            break;
+        case DAAPIRequestTypePopular:
+            self.title = @"Popular";
+            break;
+        default:
+            break;
+    }
+    [self getShotsModelArrayWithRequestType:self.type WithPage:nowPage];
 }
 
 -(void)settingCollectionView
@@ -228,8 +244,8 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 //    return [self.cellSizes[indexPath.item] CGSizeValue];
-    // return CGSizeMake(145, 212);
-    return CGSizeMake(145 , 212 / 2);
+    return CGSizeMake(145, 212);
+    // return CGSizeMake(145 , 212 / 2);
     //return CGSizeMake(145 + arc4random() % 20, 212 + arc4random() % 20);
 }
 

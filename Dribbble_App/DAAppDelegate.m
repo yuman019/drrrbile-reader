@@ -24,7 +24,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     JASidePanelController *sidePanelController = [[JASidePanelController alloc] init];
-    sidePanelController.leftPanel = [[DALeftSideViewController alloc] initWithNibName:@"DALeftSideViewController" bundle:nil];
+    DALeftSideViewController *leftSideVC = [[DALeftSideViewController alloc] initWithNibName:@"DALeftSideViewController" bundle:nil];
+    //sidePanelController.leftPanel = [[UINavigationController alloc] initWithRootViewController:leftSideVC];
+    sidePanelController.leftPanel = leftSideVC;
     DATopViewController *topVC = [[DATopViewController alloc] initWithNibName:@"DATopViewController" bundle:nil];
     sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:topVC];
     
@@ -38,6 +40,8 @@
 -(void)settingNavigationbar
 {
     [UINavigationBar appearance].barTintColor = COLOR_PINK;
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

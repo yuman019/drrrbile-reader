@@ -12,4 +12,7 @@
 @interface DATopViewController : UIViewController
 <UICollectionViewDataSource, UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout>
 
+//@property (nonatomic) NSString *type;
+@property DAAPIRequestType type;
+
 @end
