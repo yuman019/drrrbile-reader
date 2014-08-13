@@ -27,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 
+@property DAAPIRequestType type;
 
 @end

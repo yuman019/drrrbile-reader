@@ -42,7 +42,7 @@
     statusView.backgroundColor = COLOR_PINK;
     [self.view addSubview:statusView];
     
-    selectionArray = @[@"Everyone", @"Debuts", @"Popular"];
+    selectionArray = @[@"Everyone", @"Debuts", @"Popular", @"Favorite"];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -106,6 +106,8 @@
         case 2:
             topVC.type = DAAPIRequestTypePopular;
             break;
+        case 3:
+            topVC.type = DAAPIRequestTypeFavorite;
         default:
             break;
     }

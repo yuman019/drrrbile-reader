@@ -33,6 +33,9 @@
 		3BD16E8A199681A300E9F807 /* NSString+stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E89199681A300E9F807 /* NSString+stripHtml.m */; };
 		3BD16E8E19973A1C00E9F807 /* DALeftSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16E8C19973A1C00E9F807 /* DALeftSideViewController.m */; };
 		3BD16E8F19973A1C00E9F807 /* DALeftSideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD16E8D19973A1C00E9F807 /* DALeftSideViewController.xib */; };
+		3BD16EE8199B387C00E9F807 /* DACoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16EE7199B387C00E9F807 /* DACoreDataManager.m */; };
+		3BD16EED199B3AAF00E9F807 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16EEC199B3AAF00E9F807 /* Player.m */; };
+		3BD16EF0199B3ABC00E9F807 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD16EEF199B3ABC00E9F807 /* Shot.m */; };
 		4854BDAFCEFB40A8AE432536 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8097AE6C6040F99604B67F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +87,12 @@
 		3BD16E8B19973A1C00E9F807 /* DALeftSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALeftSideViewController.h; sourceTree = "<group>"; };
 		3BD16E8C19973A1C00E9F807 /* DALeftSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALeftSideViewController.m; sourceTree = "<group>"; };
 		3BD16E8D19973A1C00E9F807 /* DALeftSideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DALeftSideViewController.xib; sourceTree = "<group>"; };
+		3BD16EE6199B387C00E9F807 /* DACoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACoreDataManager.h; sourceTree = "<group>"; };
+		3BD16EE7199B387C00E9F807 /* DACoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACoreDataManager.m; sourceTree = "<group>"; };
+		3BD16EEB199B3AAF00E9F807 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		3BD16EEC199B3AAF00E9F807 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		3BD16EEE199B3ABC00E9F807 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
+		3BD16EEF199B3ABC00E9F807 /* Shot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shot.m; sourceTree = "<group>"; };
 		8F8097AE6C6040F99604B67F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BADCF4DC44B4DFD9EB065D8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +162,7 @@
 			children = (
 				3BD16E421995E81000E9F807 /* DAAppDelegate.h */,
 				3BD16E431995E81000E9F807 /* DAAppDelegate.m */,
+				3BD16EEA199B3A8900E9F807 /* CoreData */,
 				3BD16E8419967F6300E9F807 /* Category */,
 				3BD16E79199600B800E9F807 /* Commons */,
 				3BD16E751995FEDF00E9F807 /* API */,
@@ -160,7 +170,6 @@
 				3BD16E6E1995F36800E9F807 /* Controllers */,
 				3BD16E6D1995F35D00E9F807 /* Cell */,
 				3BD16E481995E81100E9F807 /* Images.xcassets */,
-				3BD16E451995E81000E9F807 /* Dribbble_App.xcdatamodeld */,
 				3BD16E3A1995E81000E9F807 /* Supporting Files */,
 			);
 			path = Dribbble_App;
@@ -254,6 +263,20 @@
 				3BD16E89199681A300E9F807 /* NSString+stripHtml.m */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		3BD16EEA199B3A8900E9F807 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3BD16E451995E81000E9F807 /* Dribbble_App.xcdatamodeld */,
+				3BD16EE6199B387C00E9F807 /* DACoreDataManager.h */,
+				3BD16EE7199B387C00E9F807 /* DACoreDataManager.m */,
+				3BD16EEB199B3AAF00E9F807 /* Player.h */,
+				3BD16EEC199B3AAF00E9F807 /* Player.m */,
+				3BD16EEE199B3ABC00E9F807 /* Shot.h */,
+				3BD16EEF199B3ABC00E9F807 /* Shot.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,9 +414,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD16EF0199B3ABC00E9F807 /* Shot.m in Sources */,
 				3BD16E401995E81000E9F807 /* main.m in Sources */,
 				3BD16E471995E81000E9F807 /* Dribbble_App.xcdatamodeld in Sources */,
+				3BD16EE8199B387C00E9F807 /* DACoreDataManager.m in Sources */,
 				3BD16E82199665F500E9F807 /* DADetailViewController.m in Sources */,
+				3BD16EED199B3AAF00E9F807 /* Player.m in Sources */,
 				3BD16E441995E81000E9F807 /* DAAppDelegate.m in Sources */,
 				3BD16E781995FF0300E9F807 /* DAAPIConnecter.m in Sources */,
 				3BD16E8A199681A300E9F807 /* NSString+stripHtml.m in Sources */,
@@ -521,6 +547,27 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dribbble_App/Dribbble_App-Prefix.pch";
 				INFOPLIST_FILE = "Dribbble_App/Dribbble_App-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					ImageIO,
+					"-framework",
+					MapKit,
+					"-framework",
+					MessageUI,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -535,6 +582,27 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dribbble_App/Dribbble_App-Prefix.pch";
 				INFOPLIST_FILE = "Dribbble_App/Dribbble_App-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					ImageIO,
+					"-framework",
+					MapKit,
+					"-framework",
+					MessageUI,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

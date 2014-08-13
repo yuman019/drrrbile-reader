@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSInteger, DAAPIRequestType) {
     DAAPIRequestTypeEveryone,
     DAAPIRequestTypeDebuts,
-    DAAPIRequestTypePopular
+    DAAPIRequestTypePopular,
+    DAAPIRequestTypeFavorite
 };
 
 @interface DAAPIConnecter : NSObject

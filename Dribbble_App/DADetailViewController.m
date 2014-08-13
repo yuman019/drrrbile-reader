@@ -9,6 +9,9 @@
 #import "DADetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NSString+stripHtml.h"
+#import "DACoreDataManager.h"
+#import "Player.h"
+#import "Shot.h"
 
 @interface DADetailViewController ()
 
@@ -31,6 +34,14 @@
     // Do any additional setup after loading the view from its nib.
     
     self.view.backgroundColor = COLOR_BACKGROUND;
+    
+    // favボタン
+    if (self.type != DAAPIRequestTypeFavorite) {
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] bk_initWithTitle:@"fav" style:UIBarButtonItemStylePlain handler:^(id sender) {
+            [self tapFavButton];
+        }];
+        self.navigationItem.rightBarButtonItem = barButton;
+    }
     
     self.scrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
     
@@ -144,6 +155,41 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tapFavButton
+{
+    DACoreDataManager *manager = [DACoreDataManager sharedManager];
+    
+    Player *player = (Player *)[manager entityForInsert:@"Player"];
+    player.username = self.shotsModel.usernameStr;
+    player.name = self.shotsModel.nameStr;
+    player.avatarURL = self.shotsModel.avatarURLStr;
+    
+    Shot *shot = (Shot *)[manager entityForInsert:@"Shot"];
+    shot.title = self.shotsModel.titleStr;
+    shot.likesCount = [[NSNumber alloc] initWithInt:[self.shotsModel.likesCountStr intValue]];
+    shot.viewsCount = [[NSNumber alloc] initWithInt:[self.shotsModel.viewsCountStr intValue]];
+    shot.imageURL = self.shotsModel.imageURLStr;
+    if (![self.shotsModel.descriptionStr isEqual:[NSNull null]]) {
+        shot.desc = self.shotsModel.descriptionStr;
+    }else {
+        shot.desc = @"";
+    }
+    shot.width = [[NSNumber alloc] initWithInt:[self.shotsModel.width intValue]];
+    shot.height = [[NSNumber alloc] initWithInt:[self.shotsModel.height intValue]];
+    shot.player = player;
+    
+    [manager saveContextCompletion:^(BOOL successFlg) {
+        UIAlertView *alertView;
+        if (successFlg) {
+            alertView = [UIAlertView bk_alertViewWithTitle:nil message:@"保存しました。"];
+        }else {
+            alertView = [UIAlertView bk_alertViewWithTitle:nil message:@"保存に失敗しました。"];
+        }
+        [alertView bk_addButtonWithTitle:@"OK" handler:nil];
+        [alertView show];
+    }];
 }
 
 @end

@@ -11,10 +11,14 @@
 #import "DAShotsModel.h"
 #import "DADetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "DACoreDataManager.h"
+#import "Shot.h"
+#import "Player.h"
 
 static NSString * const DACollectionViewCellIdentifier = @"Cell";
 
 @interface DATopViewController ()
+<NSFetchedResultsControllerDelegate>
 
 @end
 
@@ -60,16 +64,25 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
         case DAAPIRequestTypePopular:
             self.title = @"Popular";
             break;
+        case DAAPIRequestTypeFavorite:
+            self.title = @"Favorite";
         default:
             break;
     }
-    [self getShotsModelArrayWithRequestType:self.type WithPage:nowPage];
+    
+    
+    if (self.type != DAAPIRequestTypeFavorite) {
+        [self getShotsModelArrayWithRequestType:self.type WithPage:nowPage];
+    }else {
+        // Favoriteの場合はAPI通信ではなく、CoreDataで取得
+        [self getFavoriteShotsAndReload];
+    }
 }
 
 -(void)settingCollectionView
 {
     CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
-    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 74, 10);
     layout.minimumColumnSpacing = 10;
     layout.minimumInteritemSpacing = 10;
     
@@ -87,7 +100,7 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 12, 0, 0)];
     [collectionView insertSubview:refreshView atIndex:0];
     refreshControl = [[UIRefreshControl alloc] init];
-    refreshControl.tintColor = [UIColor redColor];
+    refreshControl.tintColor = COLOR_PINK;
     [refreshControl addTarget:self action:@selector(refreshDatas) forControlEvents:UIControlEventValueChanged];
     [refreshView addSubview:refreshControl];
 }
@@ -109,8 +122,49 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     }];
 }
 
+-(void)getFavoriteShotsAndReload
+{
+    NSFetchRequest *request = [[DACoreDataManager sharedManager] fetchRequest:@"Shot" sortKey:@"title" limit:0];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                               managedObjectContext:[[DACoreDataManager sharedManager] managedObjectContext]
+                                                                                                 sectionNameKeyPath:nil
+                                                                                                          cacheName:nil];
+    fetchedResultsController.delegate = self;
+    // データ検索を行います。
+    // 失敗した場合には、メソッドはfalseを返し、引数errorに値を詰めてくれます。
+    NSError *error = nil;
+    if (![fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    NSArray *favShotsArray = [fetchedResultsController fetchedObjects];
+    [favShotsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Shot *shot = (Shot *)obj;
+        NSDictionary *resultDic = @{@"title": shot.title,
+                                    @"likes_count": shot.likesCount,
+                                    @"views_count": shot.viewsCount,
+                                    @"image_url": shot.imageURL,
+                                    @"description": shot.desc,
+                                    @"width": shot.width,
+                                    @"height": shot.height,
+                                    @"player" : @{@"username": shot.player.username,
+                                                  @"name": shot.player.name,
+                                                  @"avatar_url": shot.player.avatarURL
+                                                  }
+                                    };
+        
+        DAShotsModel *model = [DAShotsModel makesShotsModelWith:resultDic];
+        [shotsArray addObject:model];
+    }];
+    [collectionView reloadData];
+}
+
 -(void)refreshDatas
 {
+    if (self.type == DAAPIRequestTypeFavorite) {
+        [refreshControl endRefreshing];
+        return;
+    }
     [shotsArray removeAllObjects];
     [self getShotsModelArrayWithRequestType:DAAPIRequestTypePopular WithPage:1];
 }
@@ -138,93 +192,7 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     DACollectionViewCell *cell = (DACollectionViewCell *)[collectionView_ dequeueReusableCellWithReuseIdentifier:DACollectionViewCellIdentifier forIndexPath:indexPath];
     
     DAShotsModel *shotsModel = shotsArray[indexPath.row];
-    
-    //[cell configureCellWithShotsModel:shotsModel];
-    
-    
-    
-    
-//    float resizedWidth = 145.0;
-//    float resizedHeight = resizedWidth * [shotsModel.height floatValue] / [shotsModel.width floatValue];
-//    NSLog(@"%f", resizedHeight);
-    
-    cell.mainImageView = (UIImageView *)[cell viewWithTag:1];
-//    cell.mainImageView.frame = CGRectMake(0, 0, resizedWidth, resizedHeight);
-    cell.mainImageView.backgroundColor = [UIColor blackColor];
-    __weak UIImageView *weekMainImageView = cell.mainImageView;
-    [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:shotsModel.imageURLStr]
-                          placeholderImage:nil
-                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                     if (cacheType != SDImageCacheTypeMemory) {
-                                         [UIView transitionWithView:weekMainImageView
-                                                           duration:0.3
-                                                            options:UIViewAnimationOptionTransitionCrossDissolve |
-                                                                    UIViewAnimationOptionCurveLinear |
-                                                                    UIViewAnimationOptionAllowUserInteraction
-                                                         animations:nil
-                                                         completion:nil];
-                                     }
-    }];
-    cell.avatarImageView = (UIImageView *)[cell viewWithTag:2];
-    cell.avatarImageView.backgroundColor = [UIColor blackColor];
-    __weak UIImageView *weekAvatarImageView = cell.avatarImageView;
-    [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:shotsModel.avatarURLStr]
-                            placeholderImage:nil
-                                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                       if (cacheType != SDImageCacheTypeMemory) {
-                                           [UIView transitionWithView:weekAvatarImageView
-                                                             duration:0.3
-                                                              options:UIViewAnimationOptionTransitionCrossDissolve |
-                                            UIViewAnimationOptionCurveLinear |
-                                            UIViewAnimationOptionAllowUserInteraction
-                                                           animations:nil
-                                                           completion:nil];
-                                       }
-                                   }];
-    
-    cell.nameLabel = (UILabel *)[cell viewWithTag:3];
-    cell.nameLabel.text = shotsModel.usernameStr;
-    cell.titleLabel = (UILabel *)[cell viewWithTag:4];
-    cell.titleLabel.text = shotsModel.titleStr;
-    
-    cell.pageViewCountLabel = (UILabel *)[cell viewWithTag:8];
-    cell.pageViewCountLabel.frame = (CGRect){
-        .origin = {
-            CGRectGetMinX(cell.titleLabel.frame), CGRectGetMaxY(cell.titleLabel.frame) + 5
-        },
-        .size = {0, 0}
-    };
-    cell.pageViewCountLabel.text = shotsModel.viewsCountStr;
-    [cell.pageViewCountLabel sizeToFit];
-    
-    cell.pageViewLabel.frame = (CGRect){
-        .origin = {
-            CGRectGetMaxX(cell.pageViewCountLabel.frame) + 1, CGRectGetMinY(cell.pageViewCountLabel.frame)
-        },
-        .size = {0, 0}
-    };
-    cell.pageViewLabel.text = @"views";
-    [cell.pageViewLabel sizeToFit];
-    
-    cell.likeCountLabel = (UILabel *)[cell viewWithTag:6];
-    cell.likeCountLabel.frame = (CGRect){
-        .origin = {
-            CGRectGetMaxX(cell.pageViewLabel.frame) + 3, CGRectGetMinY(cell.pageViewLabel.frame)
-        },
-        .size = {0, 0}
-    };
-    cell.likeCountLabel.text = shotsModel.likesCountStr;
-    [cell.likeCountLabel sizeToFit];
-    
-    cell.likeLabel.frame = (CGRect){
-        .origin = {
-            CGRectGetMaxX(cell.likeCountLabel.frame) + 1, CGRectGetMinY(cell.likeCountLabel.frame)
-        },
-        .size = {0, 0}
-    };
-    cell.likeLabel.text = @"likes";
-    [cell.likeLabel sizeToFit];
-    
+    [cell configureCellWithShotsModel:shotsModel];
     
     return cell;
 }
@@ -236,6 +204,7 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     DAShotsModel *shotsModel = shotsArray[indexPath.row];
     DADetailViewController *detailVC = [[DADetailViewController alloc] initWithNibName:@"DADetailViewController" bundle:nil];
     detailVC.shotsModel = shotsModel;
+    detailVC.type = self.type;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -255,7 +224,7 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 {
     if (collectionView.contentSize.height - [UIScreen mainScreen].bounds.size.height - 50.0 < scrollView.contentOffset.y) {
         // このタイミングでページングスタート
-        if (!isLoading) {
+        if (!isLoading && self.type != DAAPIRequestTypeFavorite) {
             isLoading = YES;
             // NSLog(@"nextPage::%d", nowPage + 1);
             [self pagingShotsDataWithNextPage:nowPage + 1];
