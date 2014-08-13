@@ -53,7 +53,6 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     shotsArray = [NSMutableArray array];
     nowPage = 1;
 
-    NSLog(@"type::%ld", self.type);
     switch (self.type) {
         case DAAPIRequestTypeEveryone:
             self.title = @"Everyone";
