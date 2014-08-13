@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *pageViewCountLabel;
 
 -(void)configureCellWithShotsModel:(DAShotsModel *)shotsModel;
++(CGFloat)heightForShots:(DAShotsModel *)shotsModel;
 
 @end

@@ -110,6 +110,9 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
     [[DAAPIConnecter sharedManager] connectWithType:type pageCount:page completion:^(BOOL successFlg, NSArray *array) {
         if (successFlg == NO) {
             NSLog(@"error");
+            UIAlertView *alertView = [UIAlertView bk_alertViewWithTitle:@"" message:@"リトライしてください。"];
+            [alertView bk_addButtonWithTitle:@"OK" handler:nil];
+            [alertView show];
         }else {
             [shotsArray addObjectsFromArray:array];
             [collectionView reloadData];
@@ -210,12 +213,11 @@ static NSString * const DACollectionViewCellIdentifier = @"Cell";
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGSize)collectionView:(UICollectionView *)collectionView_ layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    return [self.cellSizes[indexPath.item] CGSizeValue];
-    return CGSizeMake(145, 212);
-    // return CGSizeMake(145 , 212 / 2);
-    //return CGSizeMake(145 + arc4random() % 20, 212 + arc4random() % 20);
+    // タイトルの行数によってセルの幅を変える　ができなかった。
+    //return CGSizeMake(145, [DACollectionViewCell heightForShots:shotsArray[indexPath.item]]);
+    return CGSizeMake(145, 198);
 }
 
 #pragma mark - Paging
