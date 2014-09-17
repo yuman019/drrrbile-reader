@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5ED78F2C-5B9E-4E64-B576-DF19BAE41456</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Dribbble_App</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4246BF49-DD1D-47C0-8430-BB540A969011</key>
+		<string>https://github.com/0109yuma/sample.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Dribbble_App.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4246BF49-DD1D-47C0-8430-BB540A969011</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/0109yuma/sample.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4246BF49-DD1D-47C0-8430-BB540A969011</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4246BF49-DD1D-47C0-8430-BB540A969011</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Dribbble_App</string>
+		</dict>
+	</array>
+</dict>
+</plist>
